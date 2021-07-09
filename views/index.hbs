@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>
+            👋 Clubhive
+        </title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/index.css" media="screen">
+
+        <meta name="description" content="Clubhive is an open-source self-hosted Clubhouse alternative that lets you have conversations with people with similar passions and interests." />
+        <meta
+            name="keywords"
+            content="clubhive, clubhouse clone, spotify greenroom clone, egen solutions, ashwin hariharan, projects, open source, tutorial"
+        >
+    </head>
+
+    <body>
+        <header class="container flex-container">
+            <h1>👋 Clubhive </h1>
+            <h1
+                id="user"
+                data-username="{{ username }}"
+                data-userid="{{ userId }}"
+                data-name="{{ name }}"
+                > Howdy {{ name }}</h1>
+        </header>
+        
+        <div class="container flex-container" id="rooms-container">
+            <section class="rooms">
+                <ul id="room-list">
+                    <!--
+                        Container for the list of rooms
+                    -->
+                </ul>
+
+                <button id="start-a-room" type="button">
+                    Start a room
+                </button>
+            </section>
+            
+
+            <section id="room-details" class="room-details" style="display: none;">
+                <h1 id="club-name" class="club-name">
+                    
+                </h1>
+                <h1 id="room-name" class="room-name">
+                    
+                </h1>
+
+
+                <ul id="panel-members" class="flex-container panel-members">
+                    
+                </ul>
+                
+
+                <h2>Others in the room</h2>
+                <ul id="audience" class="flex-container audience">
+                    
+                </ul>
+                <hr>
+                <div class="actions">
+                    <button id="leave-room" class="leave" type="button">
+                        Leave quietly
+                    </button>
+
+                    <button class="mute" type="button" id="mic">
+                    
+                </div>
+            </section>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/modules/peerjs.min.js" type="text/javascript"></script>
+        <script type="module" src="/modules/index.js"></script>
+
+        <noscript>
+            This application requires JavaScript to be enabled
+        </noscript>
+    </body>
+
+</html>

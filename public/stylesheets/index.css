@@ -1,0 +1,275 @@
+:root {
+    --main-bg-color: #F2EFE4;
+    --font-icon-family: 'Font Awesome\ 5 Free';
+}
+
+body {
+    font-family: Nunito, x  sans-serif;
+    background-color: var(--main-bg-color);
+    color: #424242;
+}
+
+.rooms {
+    width: 50%;
+    max-width: 34em;
+    margin: auto;
+}
+
+#room-list {
+    height: 75vh;
+    overflow-y: scroll;
+    direction: rtl;
+    list-style: none;
+    padding-right: 1%;
+}
+
+#room-list > li {
+    text-align: left;
+}
+
+header > h1 {
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.container {
+    max-width: 75em;
+    margin: auto;
+}
+
+.flex-container {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: start;
+    justify-content: space-between;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+}
+
+.flex-container.audience {
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.room-card {
+    font-size: 1.25em;
+    background-color: #FFFFFF;
+    height: 9.5em;
+    max-height: 18.75em;
+    margin: 20px 20px 20px 20px;
+    padding: 20px;
+    color: #333333;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 1px lightgray;
+    direction: ltr;
+}
+
+.room-card:hover, .room-card:focus {
+    box-shadow: 0px 0px 4px 1px gray;
+}
+
+.room-card.selected {
+    box-shadow: 0px 0px 5px 1px #27AE60;
+}
+
+.club-name {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.room-name {
+    font-weight: bold;
+}
+
+.club-name::after,
+.room-card > .count > .participants::after,
+.room-card > .count > .panel::after,
+button.leave::before {
+    font-family: var(--font-icon-family);
+    font-weight: 900;
+}
+
+.room-card > .panel-members > li::after {
+    font-family: var(--font-icon-family);
+    font-weight: normal;
+    content: '\f4ad';
+    color: #BDBDBD;
+    padding-left: 5px;
+}
+
+
+.club-name::after {
+    content: ' \f015';
+    color: #27AE60;
+}
+
+.panel-members, .audience {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.count {
+    color: #9E9E9E;
+}
+
+.room-card > .count > .participants::after {
+    content: '\f007';
+    padding-left: 5px;
+    font-size: 0.8em;
+}
+
+.room-card > .count > .panel::before {
+    content: ' /';
+    padding-right: 5px;
+}
+
+.room-card > .count > .panel::after {
+    content: '\f4ad';
+    padding-left: 5px;
+}
+
+.room-details {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    font-size: 1.25em;
+    width: 60%;
+
+    margin: 10px 10px 10px 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 2px lightgray;
+}
+
+.room-details .flex-container {
+    flex-wrap: wrap;
+}
+
+.room-details > #club-name {
+    font-weight: normal;
+    font-size: 1.25em;
+}
+
+.room-details > #room-name {
+    font-size: 1.56em;
+}
+
+.room-details > h2 {
+    font-size: 1.25em;
+    color: #9E9E9E;
+}
+
+.room-details .flex-container.panel-members li {
+    min-width: 6.25em;
+    width: 30%;
+}
+
+.room-details .flex-container.audience li {
+    min-width: 6.25em;
+    width: 25%;
+}
+
+.participant-audio {
+  visibility: hidden;
+}
+
+button.leave {
+    color: #EF5350;
+    background-color: #F5F5F5;
+    font-size: 1.25em;
+    width: 10.5em;
+    height: 1.8em;
+    border-radius: 15px;
+    border-style: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.leave::before {
+    content: '\f25b';
+    color: #DBB68F;
+}
+
+#mic {
+    display: inline-block;
+    text-align: center;
+    background-color: #F5F5F5;
+    font-size: 1.25em;
+    width: 1.8em;
+    height: 1.88em;
+    border-radius: 18px;
+    border-style: none;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.speak::before {
+    content: '\f130';
+    font-family: var(--font-icon-family);
+    font-weight: 900;
+}
+
+.mute::before {
+    content: '\f131';
+    font-family: var(--font-icon-family);
+    font-weight: 900;
+}
+
+#start-a-room, #create-room {
+    display: block;
+    background-color: #27ae60;
+    color: white;
+    font-size: 1.56em;
+    width: 10.75em;
+    height: 2.12em;
+    border-radius: 25px;
+    border-style: none;
+    margin: auto;
+    cursor: pointer;
+}
+
+#create-room::before {
+    content: '🎉'
+}
+
+#start-a-room::before {
+    content: '\f067';
+    font-family: var(--font-icon-family);
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+@media (max-width: 48em) {
+    header > h1 {
+        font-size: 1.2em;
+    }
+
+    .rooms {
+        width: 70%;
+    }
+}
+
+@media (max-width: 30em) {
+    header > h1 {
+        font-size: 1.2em;
+    }
+
+    .rooms {
+        width: 95%;
+    }
+
+    button.leave, #mic {
+        font-size: 0.8em;
+    }
+
+}
